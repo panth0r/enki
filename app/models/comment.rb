@@ -14,7 +14,7 @@ class Comment < ActiveRecord::Base
   validate :open_id_error_should_be_blank
 
   def open_id_error_should_be_blank
-    errors.add(:base, openid_error) unless openid_error.blank?
+    errors.add(:base, openid_error) if openid_error.blank? #if == unless
   end
 
   def apply_filter
