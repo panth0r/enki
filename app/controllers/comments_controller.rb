@@ -42,7 +42,7 @@ class CommentsController < ApplicationController
           @comment.author       = (registration["fullname"] || registration["nickname"] || @comment.author_url).to_s
           @comment.author_email = (registration["email"] || @comment.author_url).to_s
 
-          @comment.openid_error = ""
+#          @comment.openid_error = ""
           session[:pending_comment] = nil
         else
           @comment.openid_error = OPEN_ID_ERRORS[ result.status ]
