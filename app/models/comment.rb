@@ -76,7 +76,7 @@ class Comment < ActiveRecord::Base
       comment = Comment.new_with_filter(params)
       if comment.requires_openid_authentication?
         comment.author_url = comment.author
-#        comment.author     = "Your OpenID Name"
+        comment.author     = "Your OpenID Name"
       end
       comment
     end
