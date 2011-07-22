@@ -35,7 +35,7 @@ class CommentsController < ApplicationController
     if @comment.requires_openid_authentication?
       session[:pending_comment] = params[:comment]
       authenticate_with_open_id(@comment.author, :optional => [:nickname, :fullname, :email]) do |result, identity_url, registration|
-        if result.status == :successful
+        if result.successful? #status == :successful
           @comment.post = @post
 
           @comment.author_url   = @comment.author
