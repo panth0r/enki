@@ -20,14 +20,14 @@
       </div>
 
       <div id="navigation">
-        <h2>Pages</h2>
+        <h2>pages</h2>
         <ul>
           <% page_links_for_navigation.each do |link| -%>
             <li><%= link_to(link.name, link.url) %></li>
           <% end -%>
         </ul>
         <% unless category_links_for_navigation.empty? -%>
-          <h2>Categories</h2>
+          <h2>categories</h2>
           <ul>
             <% category_links_for_navigation.each do |link| -%>
               <li><%= link_to(link.name, link.url) %></li>
